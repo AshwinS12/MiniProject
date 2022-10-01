@@ -83,5 +83,30 @@ public class DemoServelet extends HttpServlet{
 		
 		
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		System.out.println("Submitted on post");
+		String employeeId = request.getParameter("employeeId");
+		int id = 0;
+		try {
+			id = Integer.parseInt(employeeId);
+		}catch(Exception e) {
+			id = 0;
+		}
+		
+		Encapsulatedclass ec = new Encapsulatedclass();
+		ec.setId(id);
+		
+		WebImplementation wi = new WebImplementation();
+		int result = wi.deletest(ec);
+		RequestDispatcher success = request.getRequestDispatcher("success.html");
+		RequestDispatcher failure = request.getRequestDispatcher("failue.html");
+		if(result>0) {
+			success.forward(request, response);
+		}else {
+			failure.forward(request, response);
+		}
+		
+	}
 
 }

@@ -14,6 +14,7 @@ public class Encapsulatedclass {
 	private String Manager;
 	private String Salarybase;
 	private String location;
+	
 	public int getId() {
 		return id;
 	}
