@@ -30,34 +30,34 @@ public class DemoServelet extends HttpServlet{
 		}catch(Exception e) {
 			id = 0;
 		}
-		String employeeName = request.getParameter("employeeName");
-		String Salarybase = request.getParameter("SalaryBand");
-		String mobile = request.getParameter("MobileNo");
-		long mob = 0;
+		String name = request.getParameter("name");
+		String Salarybase = request.getParameter("salaryband");
+		String mob = request.getParameter("mobile");
+		long mobile = 0;
 		try {
-			mob = Long.parseLong(mobile);
+			mobile = Long.parseLong(mob);
 		}catch(Exception e) {
-			mob = 0;
+			mobile = 0;
 		}
 	 String Education = request.getParameter("Education");
-     String dob = request.getParameter("Date of birth");
-     String account = request.getParameter("Account no.");
+     String dob = request.getParameter("dob");
+     String account = request.getParameter("account");
      long ac = 0;
      try {
     	 ac = Long.parseLong(account);
      }catch(Exception e) {
     	 ac = 0;
      }
-	 String bank=request.getParameter("Bank Name");
-	 String company = request.getParameter("Company Name");
-	 String role = request.getParameter("Designation");
-     String Manager = request.getParameter("Manager");
-	String location = request.getParameter("Location");
-		
+	 String bank=request.getParameter("bankname");
+	 String company = request.getParameter("company");
+	 String role = request.getParameter("role");
+     String Manager = request.getParameter("manager");
+	String location = request.getParameter("location");	
+	
 		Encapsulatedclass es = new Encapsulatedclass();
 		es.setId(id);
-		es.setName(employeeName);
-		es.setMobile(mob);
+		es.setName(name);
+		es.setMobile(mobile);
 		es.setAccount(ac);
 		es.setBank(bank);
 		es.setCompany(company);
@@ -71,19 +71,19 @@ public class DemoServelet extends HttpServlet{
 		WebImplementation we = new WebImplementation();
 		int result = we.Insertwithprepst(es);
 		HttpSession session = request.getSession();
-		session.setAttribute("EmployeObject", es);
+		session.setAttribute("EmployeeObject", es);
 		
 		RequestDispatcher empservlet = request.getRequestDispatcher("/EmployeeData");
-		RequestDispatcher failure = request.getRequestDispatcher("Fail.html");
+		RequestDispatcher failure = request.getRequestDispatcher("Failure.html");
 		if(result>0) {
-			empservlet.forward(request, response);
-		} else {
-			failure.forward(request, response);
+			
+				empservlet.forward(request, response);
+			}
+		 else {
+		
+				failure.forward(request, response);
 		}
-		
-		
 	}
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		System.out.println("Submitted on post");
 		String employeeId = request.getParameter("employeeId");
@@ -93,20 +93,19 @@ public class DemoServelet extends HttpServlet{
 		}catch(Exception e) {
 			id = 0;
 		}
-		
 		Encapsulatedclass ec = new Encapsulatedclass();
 		ec.setId(id);
-		
 		WebImplementation wi = new WebImplementation();
 		int result = wi.deletest(ec);
-		RequestDispatcher success = request.getRequestDispatcher("success.html");
-		RequestDispatcher failure = request.getRequestDispatcher("failue.html");
+		RequestDispatcher success = request.getRequestDispatcher("successfull.html");
+		RequestDispatcher failure = request.getRequestDispatcher("Failure.html");
 		if(result>0) {
 			success.forward(request, response);
 		}else {
 			failure.forward(request, response);
 		}
-		
 	}
+	
+		}
+	
 
-}

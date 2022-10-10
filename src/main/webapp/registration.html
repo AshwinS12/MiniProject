@@ -11,68 +11,56 @@ background-size: cover;
 }
 </style>
 </head>
-<body>
+<body class= "bg-info">
 <div class="index">
 <h1 align = "center">Its Great! to always welcome new team members.</h1>
 <h2>Please enter the values in the fields below</h2>
 <h4>* is Mandatory field</h4>
-<table  cellpadding = "5" >
-<tr>
-<td><span style = "color : red">*</span>EmplooyeeId: </td>
-<td><input type = "text" name = "employeeId"></td>
-</tr>
-<tr>
-<td><span style = "color: red">*</span>EmployeeName: </td>
-<td><input type = "text" name = "employeeName"></td>
-</tr>
-<tr>
-<td><span style ="color: red">*</span>MobileNumber: </td>
-<td><input type = "text" name = "mobilenumber"></td>
-</tr>
-<tr>
-<td>Education:</td>
-<td><input type = "text" name = "Education"></td>
-</tr>
-<tr>
-<td> Date of Birth: </td>
-<td><input type = "text" name = "dob"></td>
-</tr>
-<tr>
-<td>AccountNo.: </td>
-<td><input type = "text" name = "accountno"></td>
-</tr>
-<tr>
-<td>BankName: </td>
-<td><input type = "text" name = "bankname"></td>
-</tr>
-<tr>
-<td>Company: </td>
-<td><input type = "text" name = "company"></td>
-</tr>
-<tr>
-<td>Designation: </td>
-<td><input type = "text" name = "role"></td>
-</tr>
-<tr>
-<td>Manager:</td>
-<td><input type = "text" name = "role"></td>
-</tr>
-<tr>
-<td>Salary Band: </td>
-<td><input type = "text" name = "salaryband"></td>
-</tr>
-<tr>
-<td>Location: </td>
-<td><input type = "text" name = "location"></td>
-</tr>
-<td><button><a href = "successfull.html">Submit</a></button>
-<tr>
-<td><button><a href = "delete.html">Delete existing employee</a></button>
-<td><button><a href="Index.html">Index Form</a>
+<form action = "DemoServelet" method = "get">
+<span style = "color : red">*</span>EmplooyeeId:
+<input type = "text" name = "employeeId">
+<br>
+<span style = "color: red">*</span>EmployeeName:<input type = "text" name = "name">
+<br>
+<span style ="color: red">*</span>MobileNumber:
+<input type = "text" name = "mobile">
+<br>
+Education:
+<input type = "text" name = "Education">
+<br>
+
+ Date of Birth:
+<input type = "text" name = "dob">
+<br>
+AccountNo.:
+<input type = "text" name = "account">
+<br>
+BankName:
+<input type = "text" name = "bankname">
+<br>
+Company: 
+<input type = "text" name = "company">
+<br>
+Designation:
+<input type = "text" name = "role">
+<br>
+Manager:
+<input type = "text" name = "manager">
+<br>
+
+Salary Band:
+<input type = "text" name = "salaryband">
+<br>
+
+Location:
+<input type = "text" name = "location">
+<br>
+<input type = "submit",value ="submit">
+<br>
+<button><a href = "delete.html">Delete existing employee</a></button>
+<button><a href="Index.html">Index Form</a>
 </button>
-</td>
-</tr>
-</table>
+</form>
 </div>
 </body>
 </html>
